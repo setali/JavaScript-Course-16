@@ -1,4 +1,274 @@
-var a = 5
+function func2() {
+  function func() {
+    console.log(a);
+  }
+
+  func();
+
+  var a = 0;
+}
+
+func2();
+// setInterval(function () {
+//   console.log(Date.now());
+// }, 1000);
+
+// for (var i = 0; i < 10; i++) {
+//   setTimeout(() => {
+//     console.log(Date.now());
+//   }, i * 1000);
+// }
+
+// function print() {
+//   var a = 0;
+//   for (var i = 0; i < 5; i++) {
+//     setTimeout(function () {
+//       console.log("i", i + a++);
+//     }, 1000);
+//   }
+// }
+
+// print();
+
+// function func() {
+//   for (let i = 0; i < 5; i++) {
+//     setTimeout(function () {
+//       console.log("i", i);
+//     }, 1000);
+//   }
+// }
+
+// func();
+
+// function func() {
+//   var a;
+//   console.log(a);
+
+//   a = 5;
+//   console.log(a);
+// }
+
+// func();
+
+// var a = "Ali";
+
+// console.log(typeof a);
+
+// console.log(a.toLowerCase());
+
+// var a = 5
+// window.a = 5
+// a = 5
+
+// var x = 1;
+
+// function func() {
+//   var a = 5;
+//   console.log(a);
+
+//   function func2() {
+//     var b = 9;
+//     var a = 8;
+//     console.log(a, b, x);
+//     window.y = 10;
+//     z = 20;
+//   }
+
+//   func2();
+//   console.log(a);
+// }
+
+// console.log("y", y);
+
+// func();
+
+// console.log("y", y);
+// console.log("z", z);
+
+// function factorial1(n) {
+//   n = BigInt(n);
+//   var result = 1n;
+
+//   for (var i = n; i > 1n; i--) {
+//     result *= i;
+//   }
+
+//   return result;
+// }
+
+// function factorial2(n) {
+//   return n ? BigInt(factorial2(n - 1)) * BigInt(n) : 1n;
+// }
+
+// console.time(1);
+// console.log(factorial1(999999).toString().length);
+// console.timeEnd(1);
+// console.time(2);
+// console.log(factorial2(7874));
+// console.timeEnd(2);
+
+// function pow(a, b) {
+//   if (b === 1) return a;
+//   return pow(a, b - 1) * a;
+// }
+
+// console.log(pow(2, 3));
+
+// console.log(2 ** 3);
+
+// // 2 * 2 * 2
+
+// function pow(a, b) {
+//   var result = a;
+//   for (var i = 1; i < b; i++) {
+//     result = result * a;
+//   }
+
+//   return result;
+// }
+
+// console.log(pow(2, 3));
+// console.log(pow(2, 2) * 2);
+// console.log(pow(2, 1) * 2 * 2);
+
+// var noop = function () {};
+
+// function Input(onChange = noop, onFocus = noop, onSearch = noop) {}
+
+// function sum(a, b) {
+//   return a + b;
+// }
+
+// function mul(a, b) {
+//   return a * b;
+// }
+
+// function operate(a, b, cb) {
+//   return cb?.(a, b);
+// }
+
+// var noop = function () {};
+
+// function operate(a, b, cb = noop) {
+//   return cb(a, b);
+// }
+
+// console.log(operate(2, 3));
+
+// var result = operate(2, 3, function (a, b) {
+//   return a * b;
+// });
+
+// console.log(result);
+
+// var r = operate(4, 5, function (a, b) {
+//   return a + b;
+// });
+
+// console.log(r);
+
+// // function operate(a, b, operator) {
+// //   if (operator === "sum") {
+// //     return sum(a, b);
+// //   }
+// //   if (operator === "mul") {
+// //     return mul(a, b);
+// //   }
+// // }
+// var obj = {
+//   name: "Ali",
+//   family: "Mousavi",
+//   getFullName: function () {
+//     return obj.name + " " + obj.family;
+//   },
+// };
+
+// console.log(obj.getFullName());
+
+// var log = function () {
+//   console.log("salam");
+// };
+
+// log();
+
+// function sum(a = 0, b = 0, c = 0, d = 0) {
+//   //   if (!c) c = 0;
+
+//   //   c = c ? c : 0;
+
+//   //   c = c ?? 0;
+//   //   d = d ?? 0;
+
+//   return a + b + c + d;
+// }
+
+// function sum() {
+//   var sum = 0;
+//   for (var i = 0; i < arguments.length; i++) {
+//     sum += arguments[i];
+//   }
+
+//   return sum;
+// }
+
+// function sum(a) {
+//   var sum = a;
+//   for (var i = 1; i < arguments.length; i++) {
+//     sum += arguments[i];
+//   }
+
+//   return sum;
+// }
+
+// console.log(sum());
+// console.log(sum(2, 3));
+// console.log(sum(2, 3, 4));
+// console.log(sum(2, 3, 4, 5));
+// console.log(sum(2, 3, 4, 5, 6));
+// console.log(sum(2, 3, 4, 5, 6));
+
+// function mul(a, b) {
+//   var mul = a * b;
+//   var sum = a + b;
+
+//   return { mul, sum };
+//   //   return { mul: mul, sum: sum };
+
+//   //   console.log("ali");
+//   //   return "ali";
+// }
+
+// var r = mul(2, 4);
+
+// console.log(r.sum);
+// console.log(r.mul);
+
+// function sum(a, b) {
+//   console.log(a, b);
+//   console.log(a + b);
+// }
+
+// sum(2, 5);
+
+// sum(10, 17);
+
+// sum();
+
+// sum(2, 3, 6);
+
+// sum(6);
+
+// function log() {
+//   console.log("salam");
+// }
+
+// log();
+// log();
+// log();
+// log();
+// log();
+
+// var a = 5
 
 // var a = 5
 // ;(function () {})
