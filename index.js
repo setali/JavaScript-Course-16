@@ -1,14 +1,493 @@
-function func2() {
-  function func() {
-    console.log(a);
-  }
+// var arr1 = [1, 2, 3, {}, []];
+// var arr2 = [4, 5, 6];
 
-  func();
+// var arr3 = arr1.concat(arr2);
 
-  var a = 0;
+// console.log(arr1.join(" - "));
+
+// console.log(arr3);
+
+var people = [
+  { name: "Ali", age: 24, geneder: "male" },
+  { name: "Alireza", age: 23, geneder: "male" },
+  { name: "Bita", age: 20, geneder: "female" },
+  { name: "Marziey", age: 38, geneder: "female" },
+  { name: "Masoume", age: 34, geneder: "female" },
+  { name: "Melika", age: 20, geneder: "female" },
+  { name: "Mostafa", age: 32, geneder: "male" },
+  { name: "Sam", age: 39, geneder: "male" },
+];
+
+var result = people.forEach(function (el) {
+  console.log(el.name);
+});
+
+console.log(result);
+
+// var names = people
+//   .filter(function (el) {
+//     return el.geneder === "male";
+//   })
+//   .map(function (el) {
+//     return el.name;
+//   });
+
+// console.log(names);
+
+// console.log(people.length === names.length);
+
+// people.forEach(function (el) {
+//   console.log(el.name);
+// });
+
+// var result = people.some(function (el) {
+//   return el.age < 20;
+// });
+
+// var result = people.findIndex(function (el) {
+//   return el.age === 24;
+// });
+
+// console.log(result);
+
+// var men = people.filter(function (el) {
+//   return el.geneder === "male";
+// });
+
+// console.log(men);
+
+// var women = people.filter(function (el) {
+//   return el.geneder === "female";
+// });
+
+// console.log(women);
+
+// var arr = [1, 5, 19, 110, 30, 7];
+
+// var result = arr.filter(function (el) {
+//   return el % 2 === 0;
+// });
+
+// console.log(result);
+
+// var result = arr.every(function (el) {
+//   return el % 2;
+// });
+
+// console.log(result);
+
+// console.log(Array.from("Ali"));
+// console.log(Array.from({ length: 10 }));
+
+// var result = Array.from({ length: 1000 }, (el, i) => i + 1);
+// var result = Array.from({ length: 1000 }).fill(1);
+
+// console.log(result);
+
+// function* gen() {
+//   yield 1;
+//   yield 2;
+//   yield 3;
+// }
+
+// var it = gen();
+
+// console.log(it.next());
+
+// for (var v of it) {
+//   console.log(v);
+// }
+
+// console.log(it.next());
+// console.log(it.next());
+// console.log(it.next());
+// console.log(it.next());
+
+// var arr1 = [5, 6, 7, 6];
+
+// arr1.length = 20;
+
+// console.log(arr1);
+
+// var arr2 = new Array(5);
+
+// console.log(arr1);
+// console.log(arr2);
+
+// var obj = {
+//   b: 2,
+//   c: 1,
+// };
+
+// // Object.freeze(obj);
+// // Object.preventExtensions(obj);
+// Object.seal(obj);
+
+// obj.b = 10;
+// obj.a = 4;
+// delete obj.c;
+
+// console.log(obj);
+
+// console.log(Object.isSealed(obj));
+// console.log(Object.isExtensible(obj));
+// console.log(Object.isFrozen(obj));
+
+// console.log(Object.keys(obj));
+
+// var en = Object.entries(obj);
+
+// console.log(Object.fromEntries(en));
+
+// Object.defineProperty(obj, "a", {
+//   value: 5,
+//   writable: true,
+//   configurable: false,
+//   enumerable: false,
+// });
+
+// for (var key in obj) {
+//   console.log(key, obj[key]);
+// }
+
+// console.log(JSON.stringify(obj));
+
+// console.log(obj.a);
+
+// // obj.a = 10;
+// delete obj.a;
+
+// console.log(obj.a);
+
+// var obj = {
+//   name: "Ali",
+//   family: "Mousavi",
+//   _age: undefined,
+// };
+
+// Object.defineProperty(obj, "age", {
+//   get() {
+//     if (this._age) {
+//       return this._age;
+//     } else {
+//       return "Age not set";
+//     }
+//   },
+//   set(value) {
+//     this._age = +value;
+//   },
+// });
+
+// Object.defineProperty(obj, "fullname", {
+//   get() {
+//     return this.name + " " + this.family;
+//   },
+// });
+
+// console.log(obj.fullname);
+
+// console.log(obj);
+
+// console.log(obj.age);
+
+// obj.age = "35";
+
+// console.log(obj.age);
+
+// var obj = Object.create(null);
+
+// console.log(obj);
+
+// var obj1 = {
+//   a: 1,
+//   // #12BAC2
+//   b: {
+//     c: 5,
+//   },
+// };
+
+// // Shallow clone
+// // var obj2 = {};
+// // Object.assign(obj2, obj1);
+
+// // Deep clone
+// var obj2 = JSON.parse(JSON.stringify(obj1));
+
+// obj2.a = 20;
+// obj2.b.c = 40;
+
+// console.log(obj1);
+// console.log(obj2);
+
+// var ali = {
+//   name: "Ali",
+//   age: 35,
+//   prop1: null,
+//   prop2: true,
+//   prop3: undefined,
+//   prop4: function () {},
+//   prop5: new Date(),
+//   prop6: Symbol(),
+
+//   toJSON: function () {
+//     return "Salam";
+//   },
+// };
+
+// var json = JSON.stringify(ali);
+
+// console.log(ali);
+// console.log(json);
+
+// var newAli = JSON.parse(json);
+
+// console.log(newAli);
+
+// console.log(newAli === ali);
+
+// var json = '{"name": "Ali", "age": 35}';
+
+// var result = JSON.parse(json);
+
+// console.log(result.name);
+
+// function welcome(greeting) {
+//   console.log(greeting + " " + this.name + " " + this.family);
+// }
+
+// var saeed = {
+//   name: "Saeed",
+//   family: "Estahri",
+// };
+
+// var nikta = {
+//   name: "Nikta",
+//   family: "Ghorbani",
+// };
+
+// welcome.call(saeed, "Hello");
+// welcome.call(nikta, "Hi");
+
+// welcome.apply(saeed, ["Salam"]);
+// welcome.apply(nikta, ["Aleyk"]);
+
+// var newFunc = welcome.bind(saeed, "Hallo");
+// console.log(newFunc);
+// newFunc();
+
+// var numbers = [4, 5, 3, 11, 9, 10, 2];
+
+// var result = Math.max.apply({}, numbers);
+
+// console.log(result);
+
+// var alireza = {
+//   name: "AliReza",
+//   family: "Parmar",
+//   // #12AcD8
+//   getFullName: function () {
+//     console.log(this.name + " " + this.family);
+//   },
+// };
+
+// alireza.getFullName();
+
+// var mahdiye = {
+//   name: "Mahdiye",
+//   family: "Askarian",
+//   // #12AcD8
+//   // getFullName: alireza.getFullName,
+//   getFullName: alireza.getFullName.bind(alireza),
+// };
+
+// mahdiye.getFullName();
+
+// var name = "Ali";
+// var family = "Saeedpour";
+// var getFullName = mahdiye.getFullName;
+
+// getFullName();
+
+// console.log(mahdiye.getFullName === alireza.getFullName);
+
+// alireza.getFullName();
+
+// var name = "MArziyeh";
+// var family = "Fathi";
+// function getFullName() {
+//   console.log(this);
+// }
+
+// window.getFullName();
+
+// window = {
+//   name: "MArziyeh",
+//   family: "Fathi",
+//   getFullName: function () {
+//     console.log(this);
+//   },
+// };
+
+// var myObj = {
+//   name: "Mostafa",
+//   family: "Hoseini",
+//   getFullName: function () {
+//     console.log(this);
+//     return this.name + " " + this.family;
+//   },
+// };
+
+// console.log(myObj.getFullName());
+
+// console.log(this);
+
+// var bool = new Boolean(false);
+
+// console.log(!!bool);
+
+// var num = new Number(5);
+
+// console.log(num);
+// console.log(typeof num);
+
+// console.log(num + 2);
+
+// var bita = {
+//   name: "Bita",
+//   family: "Bahadori",
+//   getFullName: function () {
+//     return bita.name + " " + bita.family;
+//   },
+// };
+
+// var masoumeh = {
+//   name: "Masoume",
+//   family: "Arabi",
+//   getFullName: function () {
+//     return masoumeh.name + " " + masoumeh.family;
+//   },
+// };
+
+// function Person(name, family) {
+//   this.name = name;
+//   this.family = family;
+//   this.getFullName = function () {
+//     return this.name + " " + this.family;
+//   };
+// }
+
+// var bita = new Person("Bita", "Bahadori");
+// var masoumeh = new Person("Masoume", "Arabi");
+
+// console.log(bita instanceof Person);
+
+// console.log(bita instanceof Date);
+
+// console.log({} instanceof Person);
+
+// console.log(bita instanceof Object);
+
+// console.log(bita.getFullName());
+// console.log(masoumeh.getFullName());
+
+// function midd(store) {
+//   return function (next) {
+//     return function (action) {
+//       return store.dispatch(action);
+//     };
+//   };
+// }
+
+// function sum(a) {
+//   return function (b) {
+//     return function (c) {
+//       return a + b + c;
+//     };
+//   };
+// }
+
+// console.log(sum(2)(5)(6));
+
+// var funcB = sum(5);
+
+// console.log(funcB);
+
+// var funcC = funcB(3);
+
+// console.log(funcC);
+
+// var result = funcC(10);
+
+// console.log(result);
+
+// var result2 = funcC(50);
+
+// console.log(result2);
+
+// var resutl3 = funcC(40);
+
+// console.log(resutl3);
+
+// var newFuncC = funcB(6);
+
+// console.log(newFuncC(10));
+
+// Immediatly Invok
+
+// IIFE (Immediately Invoked Function Expression)
+
+// var myCounter = (function () {
+//   var counter = 0;
+
+//   function increase() {
+//     console.log(++counter);
+//   }
+
+//   function decrease() {
+//     console.log(--counter);
+//   }
+
+//   return {
+//     increase,
+//     decrease,
+//   };
+// })();
+
+// // var myCounter = counterFunc();
+
+// console.log(myCounter);
+
+///////////////
+function reset() {
+  counter = 0;
 }
 
-func2();
+// function sum(a, b) {
+//   return a + b;
+// }
+
+// function operate(a, b, cb) {
+//   if (a === 2) {
+//     return cb(a, b);
+//   }
+
+//   return 0;
+// }
+
+// var result = operate(5, 3, sum);
+// console.log(result);
+
+// function func2() {
+//   function func() {
+//     console.log(a);
+//   }
+
+//   func();
+
+//   var a = 0;
+// }
+
+// func2();
 // setInterval(function () {
 //   console.log(Date.now());
 // }, 1000);
