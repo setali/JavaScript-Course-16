@@ -1,3 +1,151 @@
+// var el = document.getElementById("my-id");
+var el = document.querySelector("#my-id");
+
+function func() {
+  var p = document.querySelector("p");
+  p.style.color = "red";
+}
+
+var header = document.getElementById("header");
+
+header.addEventListener("click", func);
+
+header.addEventListener("click", function () {
+  el.style.backgroundColor = "blue";
+});
+
+header.addEventListener("click", function (event) {
+  // console.log(event.target.parentElement.remove());
+  event.target.style.color = "white";
+});
+
+// console.log(el.firstChild);
+// console.log(el.firstElementChild);
+
+// console.log(el.lastChild);
+// console.log(el.lastElementChild);
+
+// var div = document.createElement("div");
+
+// div.textContent = "Ali Mousavi";
+
+// console.log(div);
+
+// document.body.appendChild(div);
+
+// function random(a, b) {
+//   return parseInt(Math.random() * (b - a)) + a;
+// }
+
+// var rand = random(50, 100);
+
+// console.log(rand);
+
+// var date = new Date();
+
+// // date.setDate(date.getDate() + 1000);
+
+// date.setHours(date.getHours() + 1000);
+
+// console.log(date);
+
+// var date = new Date();
+
+// console.log(date);
+// console.log(+date);
+
+// console.log(parseInt(date / 1000));
+
+// var start = Date.now();
+
+// console.log(999n ** 9999999n);
+
+// console.log(Date.now() - start);
+
+// console.log(JSON.stringify(date));
+
+// console.log(date);
+
+// console.log(date.toUTCString());
+
+// var arr = [9, 1001, 1001];
+
+// // var newArr = arr.map(parseInt);
+
+// var newArr = arr.map(function (el, index, arr) {
+//   console.log(el, index);
+//   return parseInt(el, index);
+// });
+
+// console.log(newArr);
+
+// function log(el) {
+//   console.log("number: ", el);
+// }
+
+// arr.forEach(log);
+
+// var result = parseInt("1010", 2);
+
+// console.log(result);
+
+// var str = "My name is Ali Mousavi";
+
+// var arr = str.split(" ");
+
+// console.log(arr);
+
+// console.log(arr.join(" "));
+
+// console.log(str);
+
+// var obj = {
+//   year: "2024",
+//   month: "6",
+//   day: "3"
+// }
+
+// "2024/06/03"
+
+// var str = "Ali Mousavi";
+
+// console.log(str[4]);
+
+// var str = new String("Ali");
+
+// console.log(typeof str);
+
+// console.log(str + " " + "Mousavi");
+
+// var arr = [2, 7, 11, 13, 9, 3, 1];
+
+// arr.sort(function (a, b) {
+//   console.log(a, b);
+//   return a - b;
+//   if (a - b > 0) {
+//     return 1;
+//   } else {
+//     return -1;
+//   }
+// });
+
+// console.log(arr);
+
+// var arr = ["a", "b", "c", "d", "f"];
+
+// arr.splice(1, 3, "a");
+
+// console.log(arr);
+
+// var arr = [2, 9, 3, 4, 7, 6];
+
+// var result = arr.reduceRight(function (acc, el) {
+//   console.log("acc: ", acc, " el: ", el);
+//   return acc + el;
+// });
+
+// console.log(result);
+
 // var arr1 = [1, 2, 3, {}, []];
 // var arr2 = [4, 5, 6];
 
@@ -7,22 +155,38 @@
 
 // console.log(arr3);
 
-var people = [
-  { name: "Ali", age: 24, geneder: "male" },
-  { name: "Alireza", age: 23, geneder: "male" },
-  { name: "Bita", age: 20, geneder: "female" },
-  { name: "Marziey", age: 38, geneder: "female" },
-  { name: "Masoume", age: 34, geneder: "female" },
-  { name: "Melika", age: 20, geneder: "female" },
-  { name: "Mostafa", age: 32, geneder: "male" },
-  { name: "Sam", age: 39, geneder: "male" },
-];
+// var people = [
+//   { name: "Ali", age: 24, geneder: "male" },
+//   { name: "Alireza", age: 23, geneder: "male" },
+//   { name: "Bita", age: 20, geneder: "female" },
+//   { name: "Marziey", age: 38, geneder: "female" },
+//   { name: "Masoume", age: 34, geneder: "female" },
+//   { name: "Melika", age: 20, geneder: "female" },
+//   { name: "Mostafa", age: 32, geneder: "male" },
+//   { name: "Sam", age: 39, geneder: "male" },
+// ];
 
-var result = people.forEach(function (el) {
-  console.log(el.name);
-});
+// people.sort(function (a, b) {
+//   return b.age - a.age;
+// });
 
-console.log(result);
+// console.log(people);
+
+// var men = people.filter(function (el) {
+//   return el.geneder === "male";
+// });
+
+// var result = men.reduce(function (acc, el) {
+//   return acc + el.age;
+// }, 0);
+
+// console.log(result / men.length);
+
+// var result = people.forEach(function (el) {
+//   console.log(el.name);
+// });
+
+// console.log(result);
 
 // var names = people
 //   .filter(function (el) {
