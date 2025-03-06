@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XHR</title>
+  </head>
+  <body>
+    <button>GetData</button>
+    <h3></h3>
+    <script>
+      function request(url, options = {}) {
+        var xhr = new XMLHttpRequest();
+        xhr.open(options.method ?? "GET", url);
+        xhr.send();
+
+        xhr.onload = function () {
+          if (options.onSuccess) {
+            options.onSuccess(JSON.parse(xhr.response));
+          }
+        };
+        xhr.onerror = options.onError;
+      }
+
+      var button = document.querySelector("button");
+
+      button.addEventListener("click", function (event) {
+        // var url = "https://jsonplaceholder.typicode.com/users/1";
+        var url = "http://localhost:3000";
+        request(url, {
+          onSuccess: function (data) {
+            document.querySelector("h3").textContent = data.name;
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

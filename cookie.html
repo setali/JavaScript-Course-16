@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookie</title>
+  </head>
+  <body>
+    <h2>Cookie</h2>
+
+    <script>
+      function setCookie(name, value, time, path = "/") {
+        var date = new Date();
+        date.setSeconds(date.getSeconds() + time);
+        document.cookie =
+          name +
+          "=" +
+          value +
+          ";expires=" +
+          date.toUTCString() +
+          ";path=" +
+          path +
+          "HttpOnly";
+      }
+
+      function getCookies() {
+        var entries = document.cookie.split(";").map(function (el) {
+          return el.trim().split("=");
+        });
+
+        return Object.fromEntries(entries);
+      }
+
+      function getCookie(name) {
+        return getCookies()[name];
+      }
+
+      function removeCookie(name) {
+        setCookie(name, "", 0);
+      }
+
+      //   removeCookie("age");
+
+      //   console.log(getCookie("age"));
+
+      //   console.log(getCookies());
+
+      //   setCookie("name", "ali", 10000);
+      //   setCookie("family", "mousavi", 10000);
+      //   setCookie("age", "35", 10000);
+    </script>
+  </body>
+</html>
