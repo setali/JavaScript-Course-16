@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="./index.js"></script>
+    <script>
+      console.log("salam");
+
+      try {
+        console.log("first try");
+        // slideshow("http://ali.com/slide1.png");
+        slideshow(["http://ali.com/slide1.png", "http://ali.com/slide2.png"]);
+        console.log("try");
+      } catch (error) {
+        console.log("catch");
+        // console.log(error);
+        // console.log(error.message);
+        // console.log(error.stack);
+        if (error instanceof ReferenceError) {
+          console.log("Refrence");
+        } else if (error instanceof Error) {
+          console.log("Error");
+        }
+      } finally {
+        console.log("Finaly");
+      }
+
+      console.log("Program");
+    </script>
+  </body>
+</html>
