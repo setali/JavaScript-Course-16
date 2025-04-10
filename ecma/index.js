@@ -1,3 +1,95 @@
+const map = new Map();
+
+map.set("name", "Ali");
+map.set("Age", 35);
+map.set(NaN, 5);
+
+map.set(NaN, "Qoli");
+
+// console.log(map.get("name"));
+// map.delete("Age");
+
+// map.clear();
+
+console.log(map);
+console.log(map.size);
+console.log(map.get(NaN));
+
+map.forEach((el) => console.log(el));
+
+for (const [key, value] of map) {
+  console.log(key, value);
+}
+
+const obj = {
+  _: 2,
+  x: 0,
+  a: 2,
+  1: 6,
+};
+
+console.log(obj);
+
+// const arr = [1, 5, 1, 2, 5, 3, 6, 9, 4, 5, 2, 1];
+
+// const set = new Set(arr);
+
+// console.log(set);
+
+// const newArr = [...set];
+
+// console.log(newArr);
+
+// const set = new Set();
+
+// set.add(4);
+// set.add(6);
+// set.add(6);
+// set.add(4);
+// set.add(8);
+// console.log(set.has(4));
+// console.log(set.has(9));
+
+// set.delete(4);
+// console.log(set.has(4));
+
+// console.log(set);
+// console.log(set.size);
+
+// set.clear();
+
+// console.log(set);
+// class Person {
+//   name = "Ali";
+
+//   static origin = "iran";
+
+//   constructor(family) {
+//     this.family = family;
+//   }
+
+//   getFullName() {
+//     return this.name + " " + this.family;
+//   }
+
+//   static getOrigin = function () {
+//     return "Iran";
+//   };
+// }
+
+// Person.getOrigin = function () {
+//   return "Iran";
+// };
+
+// Person.origin = "iran";
+
+// const a = new Person("Mousavi");
+
+// console.log(a);
+// console.log(a.origin);
+// console.log(Person.getOrigin());
+// console.log(Person.origin);
+
 // function Animal(type, name) {
 //   this.type = type;
 //   this.name = name;
