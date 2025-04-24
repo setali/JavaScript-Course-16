@@ -6,7 +6,7 @@ export default function renderHead() {
   const div = makeElement("div");
   div.classList.add("head");
   const h2 = makeElement("h2");
-  h2.textContent = "Users Lisdadasdasdaaast";
+  h2.textContent = "Users List";
 
   const img = makeElement("img");
   img.setAttribute("src", logo);
