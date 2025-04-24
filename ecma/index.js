@@ -1,34 +1,83 @@
-const map = new Map();
-
-map.set("name", "Ali");
-map.set("Age", 35);
-map.set(NaN, 5);
-
-map.set(NaN, "Qoli");
-
-// console.log(map.get("name"));
-// map.delete("Age");
-
-// map.clear();
-
-console.log(map);
-console.log(map.size);
-console.log(map.get(NaN));
-
-map.forEach((el) => console.log(el));
-
-for (const [key, value] of map) {
-  console.log(key, value);
-}
-
 const obj = {
-  _: 2,
-  x: 0,
-  a: 2,
-  1: 6,
+  name: "Ali",
+  family: "Mousavi",
+  age: 35,
+  [Symbol.toPrimitive](hint) {
+    if (hint === "number") {
+      return this.age;
+    }
+    if (hint === "string") {
+      return `${this.name} ${this.family}`;
+    }
+  },
 };
 
-console.log(obj);
+console.log(+obj);
+console.log(String(obj));
+
+// const sym1 = Symbol.for("ali");
+// const sym2 = Symbol.for("ali");
+
+// console.log(sym1);
+// console.log(sym2);
+// console.log(sym1 === sym2);
+
+// const sym = Symbol("ali");
+// const sym1 = Symbol();
+
+// console.log(sym);
+// console.log(sym1);
+
+// console.log(sym === sym1);
+
+// const obj = {
+//   name: "Ali",
+//   2: "Qoli",
+//   [sym]: "Eli",
+// };
+
+// console.log(obj);
+// // console.log(obj.name);
+// // console.log(obj["Symbol(ali)"]); //  undefined
+// // console.log(obj[sym]);
+
+// for (const key in obj) {
+//   console.log(key, obj[key]);
+// }
+
+// console.log(JSON.stringify(obj));
+
+// const map = new Map();
+
+// map.set("name", "Ali");
+// map.set("Age", 35);
+// map.set(NaN, 5);
+
+// map.set(NaN, "Qoli");
+
+// // console.log(map.get("name"));
+// // map.delete("Age");
+
+// // map.clear();
+
+// console.log(map);
+// console.log(map.size);
+// console.log(map.get(NaN));
+
+// map.forEach((el) => console.log(el));
+
+// for (const [key, value] of map) {
+//   console.log(key, value);
+// }
+
+// const obj = {
+//   _: 2,
+//   x: 0,
+//   a: 2,
+//   1: 6,
+// };
+
+// console.log(obj);
 
 // const arr = [1, 5, 1, 2, 5, 3, 6, 9, 4, 5, 2, 1];
 
